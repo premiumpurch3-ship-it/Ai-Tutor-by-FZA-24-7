@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --background: #08090d;
+  --surface: #0f1117;
+  --surface-2: #161923;
+  --border: #23273499;
+  --foreground: #f4f5f7;
+  --muted: #9096a8;
+  --primary: #7c6cf6;
+  --primary-2: #4f9dfd;
+  --accent: #38e5c8;
+  --danger: #f5636a;
+  --radius: 16px;
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, var(--primary), var(--primary-2) 50%, var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glow {
+  box-shadow: 0 0 0 1px rgba(124, 108, 246, 0.15), 0 20px 60px -20px rgba(124, 108, 246, 0.35);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2e3b;
+  border-radius: 999px;
+}
